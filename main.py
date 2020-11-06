@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+#trump & biden current vote totals
+t = 3278696
+b = 3237391
+print(f'current status: \n\tTrump: {b} votes\n\tBiden: {b} votes\n\tDifference: {t-b}')
 
 def get_vote_diff(trump:int , biden: int) -> int:
 
@@ -20,7 +24,7 @@ def get_fractions(margin: int) -> tuple: # Tup(float, float)
     smaller          = 100 - larger
     return (larger, smaller)
 
-def get_vote_gain(county_name:str, margin: float, frac_reporting: int, current_votes: int verbose=False):
+def get_vote_gain(county_name:str, margin: float, frac_reporting: int, current_votes: int, verbose=False):
     
     final_total_votes = current_votes/(frac_reporting/100)
     #print(final_total_votes, current_votes, frac_reporting)
@@ -67,11 +71,22 @@ Gains['Delaware    '] = get_vote_gain(county_name='Delaware', margin=25, current
 swing = 0
 for cty, votes in Gains.items():
     
-    print(f'In {cty} county the swing will be: {int(votes)}\t votes.')
+    print(f'In {cty} county the swing will be:\n\t{int(votes)}\tvotes.')
     swing += votes
 print(f'The total swing is {int(swing)} votes.')
 
-
-t = 3278696
-b = 3237391
-print(f'current status: trump: {b}, biden: {b}; difference: {t-b}')
+'''
+current status: 
+	Trump: 3237391 votes
+	Biden: 3237391 votes
+	Difference: 41305
+In Allegheny    county the swing will be:
+	6754	votes.
+In Philedelphia county the swing will be:
+	47843	votes.
+In Bucks        county the swing will be:
+	718	votes.
+In Delaware     county the swing will be:
+	11282	votes.
+The total swing is 66599 votes.
+'''
