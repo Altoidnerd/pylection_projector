@@ -88,7 +88,7 @@ swing = 0
 for cty, votes in Gains.items():
     
     print(f'In {cty} county the swing will be:\n\t{int(votes)}\tvotes.')
-    swing += votes
+    swing += int(votes)
 print(f'The total swing is {int(swing)} votes.')
 print(f'The final vote differential will be {b-t} + {swing} = {b-t+swing} votes.')
 print('='*80)
@@ -108,7 +108,7 @@ In Allegheny    county the swing will be:
 	6754	votes.
 In Philedelphia county the swing will be:
 	41147	votes.
-The total swing is 47902 votes.
-The final vote differential will be 12390 + 47902.35 = 60292.35 votes.
+The total swing is 47901 votes.
+The final vote differential will be 12390 + 47901 = 60291 votes.
 ================================================================================
 '''

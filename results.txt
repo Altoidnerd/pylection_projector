@@ -1,0 +1,17 @@
+================================================================================
+			Pennsylvania Projection
+current status:
+	Trump: 3307724 votes
+	Biden: 3307724 votes
+	Difference: 12390 +Biden
+
+================================================================================
+				Results
+
+In Allegheny    county the swing will be:
+	6754	votes.
+In Philedelphia county the swing will be:
+	41147	votes.
+The total swing is 47901 votes.
+The final vote differential will be 12390 + 47901 = 60291 votes.
+================================================================================
