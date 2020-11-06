@@ -1,7 +1,7 @@
 ================================================================================
 			Pennsylvania Projection
-current status:
-	Trump: 3307724 votes
+current status: 
+	Trump: 3295334 votes
 	Biden: 3307724 votes
 	Difference: 12390 +Biden
 

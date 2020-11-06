@@ -13,7 +13,7 @@ Republican
 b = 3307724
 t = 3295334
 
-print(f'current status: \n\tTrump: {b} votes\n\tBiden: {b} votes\n\tDifference: {b-t} +Biden\n')
+print(f'current status: \n\tTrump: {t} votes\n\tBiden: {b} votes\n\tDifference: {b-t} +Biden\n')
 
 def get_vote_diff(trump:int , biden: int) -> int:
 
