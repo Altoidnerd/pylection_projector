@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 
+print('='*80+'\n\t\t\tPennsylvania Projection')
+'''
+Joseph R. Biden Jr.
+Democrat
+3,307,724	49.5%
+Donald J. Trump*
+Republican
+3,295,334	49.3
+'''
 #trump & biden current vote totals
-t = 3278696
-b = 3237391
-print(f'current status: \n\tTrump: {b} votes\n\tBiden: {b} votes\n\tDifference: {t-b}')
+b = 3307724
+t = 3295334
+
+print(f'current status: \n\tTrump: {b} votes\n\tBiden: {b} votes\n\tDifference: {b-t} +Biden\n')
 
 def get_vote_diff(trump:int , biden: int) -> int:
 
@@ -47,15 +57,19 @@ def get_vote_gain(county_name:str, margin: float, frac_reporting: int, current_v
     
     
 '''
+source: https://www.nytimes.com/interactive/2020/11/03/us/elections/results-pennsylvania-president.html
+
 County	        Margin	   | Est. votes reported 	Total votes Absentee
 -----------------------------------------------------------------------
-Allegheny	    Biden +19  | 95%                    675,489	    310,796
 
-Philadelphia	Biden +61  | 89%                    634,592	    75,220
+County	Margin	2016 margin	Est. votes reported	Total votes	Absentee
+Philadelphia	Biden +62	D+67	
+96%
+685,791	75,220
+Allegheny	Biden +19	D+16.5	
+94%
+675,489	310,796
 
-Bucks	        Biden +3   | 94%                    375,205	    —
-
-Delaware	    Biden +25  | 87%                    302,024	    74,110
 '''
 
 from collections import OrderedDict
@@ -64,29 +78,37 @@ Gains = {}
 
 
 Gains['Allegheny   '] = get_vote_gain(county_name='Allegheny', margin=19, current_votes=675489, frac_reporting=95)
-Gains['Philedelphia'] = get_vote_gain(county_name='Philedelphia', margin=61, current_votes=634592, frac_reporting=89)
-Gains['Bucks       '] = get_vote_gain(county_name='Bucks', margin=3, current_votes=375205, frac_reporting=94 )
-Gains['Delaware    '] = get_vote_gain(county_name='Delaware', margin=25, current_votes=302024, frac_reporting=87)
+Gains['Philedelphia'] = get_vote_gain(county_name='Philedelphia', margin=94, current_votes=685791, frac_reporting=94)
+#Gains['Bucks       '] = get_vote_gain(county_name='Bucks', margin=3, current_votes=375205, frac_reporting=94 )
+#Gains['Delaware    '] = get_vote_gain(county_name='Delaware', margin=25, current_votes=302024, frac_reporting=87)
 
+print('='*80)
+print('\t\t\t\tResults\n')
 swing = 0
 for cty, votes in Gains.items():
     
     print(f'In {cty} county the swing will be:\n\t{int(votes)}\tvotes.')
     swing += votes
 print(f'The total swing is {int(swing)} votes.')
+print(f'The final vote differential will be {b-t} + {swing} = {b-t+swing} votes.')
+print('='*80)
 
 '''
-current status: 
-	Trump: 3237391 votes
-	Biden: 3237391 votes
-	Difference: 41305
+================================================================================
+			Pennsylvania Projection
+current status:
+	Trump: 3307724 votes
+	Biden: 3307724 votes
+	Difference: 12390 +Biden
+
+================================================================================
+				Results
+
 In Allegheny    county the swing will be:
 	6754	votes.
 In Philedelphia county the swing will be:
-	47843	votes.
-In Bucks        county the swing will be:
-	718	votes.
-In Delaware     county the swing will be:
-	11282	votes.
-The total swing is 66599 votes.
+	41147	votes.
+The total swing is 47902 votes.
+The final vote differential will be 12390 + 47902.35 = 60292.35 votes.
+================================================================================
 '''
